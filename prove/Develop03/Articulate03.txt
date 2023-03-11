@@ -1,0 +1,46 @@
+Encapsulation - Articulate
+
+What is encapsulation and why is it important?
+
+. Explain the meaning of Encapsulation
+It is interesting that the word itself indicates what encapsulation is. 
+Refers to enclosing something so that other code can't use or see it.
+Within the programming, it indicates that we hide information 
+and access control, for example of a class.
+
+. Highlight a benefit of Encapsulation
+I think that some points that give importance to encapsulation 
+would be in cases where something is not working well, we can 
+quickly identify where the error is because not all the codes have 
+access and if we need to correct something we can go directly to the codes 
+have access to make the necessary adjustments.
+
+. Provide an application of Encapsulation
+A general rule, for example, is that attributes (or member variables) 
+should be private. The other classes do not have to know how 
+the class has stored its information.
+
+public class Person
+{
+    private string _title;
+    private string _firstName;
+    private string _lastName;
+
+}
+
+
+. Use a code example of Encapsulation from the program you wrote
+One of the examples where I used encapsulation in my code was when 
+I defined some of the member variables of the Scripture class:
+
+public class Scripture
+{    
+    ...
+    private string _fileName = "ScriptureLibrary.txt";
+    private string _key;
+    private string _text;
+    ...
+}
+
+
+(Thoroughly explain these concepts (this likely cannot be done in less than 100 words))
