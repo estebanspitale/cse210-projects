@@ -1,0 +1,38 @@
+Inheritance - Articulate
+
+What is inheritance and why is it important?
+
+. Explain the meaning of Inheritance
+Inheritance is a principle that has the ability to, as the word indicates, 
+inherit from another class, attributes and 
+methods without having to rewrite them. It is the same as 
+the concept of inheritance between parents and children.
+
+. Highlight a benefit of Inheritance
+I think one of the biggest benefits is that it saves us 
+from writing code by being able to use the one inherited from 
+the parent class. It becomes a means to reuse code
+
+. Provide an application of Inheritance
+An example of Inheritance is when we have two classes, 
+one Person and the other Patient. The person class will have 
+its own tributes from any person and the patient class inherits 
+those attributes from the person class and adds its own attributes 
+and methods such as membership card number, type of social work, etc.
+
+. Use a code example of Inheritance from the program you wrote
+public class BreathingActivity : Activity
+{ 
+    private string _mess1 = "Breathe in...";
+    private string _mess2 = "Breathe out...";
+    private string _description = "This activity will help you relax...
+    .
+    .
+    .
+}
+
+For example this code shows how the BreathingActivity class inherits 
+attributes and methods from the Activity class
+
+
+(Thoroughly explain these concepts (this likely cannot be done in less than 100 words))
