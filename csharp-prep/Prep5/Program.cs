@@ -4,45 +4,65 @@ class Program
 {
     static void Main(string[] args)
     {
-        DisplayWelcome();
+           List<Shape> shapes = new List<Shape>();
 
-        string userName = PromptUserName();
-        int userNumber = PromptUserNumber();
+        Square s1 = new Square("Red", 5);
+        shapes.Add(s1);
 
-        int squaredNumber = SquareNumber(userNumber);
+        Rectangle s2 = new Rectangle("Green", 5, 10);
+        shapes.Add(s2);
 
-        DisplayResult(userName, squaredNumber);
+        Circle s3 = new Circle("Blue", 5);
+        shapes.Add(s3);
+
+        foreach (Shape s in shapes)
+        {
+            string color = s.GetColor();
+            double area = s.GetArea();
+            string sType = s.GetShapeType();
+
+            Console.WriteLine($"The {sType} is {color} and has an area of {area}.");
+        }
     }
+    //     DisplayWelcome();
+
+    //     string userName = PromptUserName();
+    //     int userNumber = PromptUserNumber();
+
+    //     int squaredNumber = SquareNumber(userNumber);
+
+    //     DisplayResult(userName, squaredNumber);
+    // }
     
-    static void DisplayWelcome()
-    {
-        Console.WriteLine("Welcome to the Program!");
-    }
+    // static void DisplayWelcome()
+    // {
+    //     Console.WriteLine("Welcome to the Program!");
+    // }
 
-    static string PromptUserName()
-    {
-        Console.WriteLine($"Please enter your name: ");
-        string userName = Console.ReadLine();
+    // static string PromptUserName()
+    // {
+    //     Console.WriteLine($"Please enter your name: ");
+    //     string userName = Console.ReadLine();
 
-        return userName;
-    }
+    //     return userName;
+    // }
 
-    static int PromptUserNumber()
-    {
-        Console.WriteLine($"Please enter your favorite number: ");
-        int userNumber = int.Parse(Console.ReadLine());
+    // static int PromptUserNumber()
+    // {
+    //     Console.WriteLine($"Please enter your favorite number: ");
+    //     int userNumber = int.Parse(Console.ReadLine());
 
-        return userNumber;
-    }
+    //     return userNumber;
+    // }
 
-    static int SquareNumber(int number)
-    {
-        int square = number * number;
-        return square;
-    }
+    // static int SquareNumber(int number)
+    // {
+    //     int square = number * number;
+    //     return square;
+    // }
 
-    static void DisplayResult(string userName, int square)
-    {
-        Console.WriteLine($"{userName}, the square of your number is {square}");
-    }
+    // static void DisplayResult(string userName, int square)
+    // {
+    //     Console.WriteLine($"{userName}, the square of your number is {square}");
+    // }
 }
