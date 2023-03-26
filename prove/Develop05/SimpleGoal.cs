@@ -2,11 +2,9 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    // Attributes
     private string _type = "Simple Goal:";
     private bool _status;
 
-    // Constructors
     public SimpleGoal(string type, string name, string description, int points) : base(type, name, description, points)
     {
         _status = false;
@@ -20,7 +18,6 @@ public class SimpleGoal : Goal
         return _status;
     }
 
-    // Methods
     public override void ListGoal(int i)
     {
         if (Finished() == false)

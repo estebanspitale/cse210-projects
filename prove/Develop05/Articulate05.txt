@@ -1,0 +1,76 @@
+Polymorphism - Articulate
+
+What is polymorphism and why is it important?
+
+.Explain the meaning of Polymorphism
+Polymorphism is another principle of object-oriented programming 
+languages ​​that allows a routine to use variables of different 
+types at different times. It is the ability to present the same 
+interface to several different data types and objects to respond 
+in a unique way to the same message.
+
+.Highlight a benefit of Polymorphism
+Polymorphism is one of the fundamental principles along 
+with encapsulation and inheritance. Allows redefining 
+methods in derived classes. It is used in the context 
+of late binding, where an object's behavior for responding 
+to a call to its method members is determined based on the 
+object's type at run time.
+
+.Provide an application of Polymorphism
+An example of Polymorphism can be when we have a Customer 
+class and another Supplier class, which inherit from an 
+abstract class Person that has the Marketing method. 
+In subclasses, the Marketing method can be overridden and 
+returns the name of the person and whether they are a customer or vendor.
+
+.Use a code example of Polymorphism from the program you wrote
+One of the code examples inside the program can be 
+seen when we create the SimpleGoal subclass:
+
+public class SimpleGoal : Goal
+{
+    private string _type = "Simple Goal:";
+    private bool _status;
+
+    public SimpleGoal(string type, string name, string description, int points) : base(type, name, description, points)
+    {
+        _status = false;
+    }
+    public SimpleGoal(string type, string name, string description, int points, bool status) : base(type, name, description, points)
+    {
+        _status = status;
+    }
+    public Boolean Finished()
+    {
+        return _status;
+    }
+
+    public override void ListGoal(int i)
+    {
+        if (Finished() == false)
+        {
+            Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
+        }
+        else if (Finished() == true)
+        {
+            Console.WriteLine($"{i}. [X] {GetName()} ({GetDescription()})");
+        }
+    }
+    public override string SaveGoal()
+    {
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+    }
+    public override string LoadGoal()
+    {
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+    }
+    public override void RecordGoalEvent(List<Goal> goals)
+    {
+       _status = true;
+       Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
+    }
+
+}
+
+(Thoroughly explain these concepts (this likely cannot be done in less than 100 words))
