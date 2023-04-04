@@ -57,7 +57,7 @@ public class EventMenu
     public string _eventInput;
     private int _eventChoice = 0;
 
-    public int GoalChoice()
+    public int EventChoice()
     {
         Console.Write(_menu);
         _eventInput = Console.ReadLine();

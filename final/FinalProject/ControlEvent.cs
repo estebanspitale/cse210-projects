@@ -11,13 +11,30 @@ public class ControlEvent
     {
         _totalPoints = 0;
     }
+    public void AddEvent(Event ev)
+    {
+        _events.Add(ev);
+    }
     public List<Event> GetEventsList()
     {
         return _events;
     }
     public void ListEvents()
     {
-    
+        if (_events.Count() > 0)
+        {
+            Console.WriteLine("\nYour Events are:");
+            int index = 1;
+            foreach (Event ev in _events)
+            {
+                ev.ListEvent(index);
+                index = index + 1;
+            }
+        }
+        else
+        {
+            Console.WriteLine("\nYou currently have no events!");
+        }
     }
     public void RecordGEvent()
     {
@@ -42,6 +59,7 @@ public class ControlEvent
         if (File.Exists(userFileName))
         {
             string[] readText = File.ReadAllLines(userFileName);
+            int totalPoints = int.Parse(readText[0]);
             readText = readText.Skip(1).ToArray();
             foreach (string line in readText)
             {
@@ -55,34 +73,34 @@ public class ControlEvent
                 if (entries[0] == "Church Event:")
                 {
                     ChurchEvent chEvent = new ChurchEvent(type, name, description, status);
-                    // AddEvent(chEvent);
+                    AddEvent(chEvent);
                 }
                 if (entries[0] == "Family Event:")
                 {
                     FamilyEvent fEvent = new FamilyEvent(type, name, description, status);
-                    // AddEvent(fEvent);
+                    AddEvent(fEvent);
                 }
                  if (entries[0] == "Work Event:")
                 {
                     WorkEvent wEvent = new WorkEvent(type, name, description, status);
-                    // AddEvent(wEvent);
+                    AddEvent(wEvent);
                 }
                  if (entries[0] == "Hobby Event:")
                 {
                     HobbyEvent hEvent = new HobbyEvent(type, name, description, status);
-                    // AddEvent(hEvent);
+                    AddEvent(hEvent);
                 }
                  if (entries[0] == "Other Event:")
                 {
                     OtherEvent oEvent = new OtherEvent(type, name, description, status);
-                    // AddEvent(oEvent);
+                    AddEvent(oEvent);
                 }
                 if (entries[0] == "Check List Event:")
                 {
                     int numberTimes = int.Parse(entries[4]);
                     int counter = int.Parse(entries[5]);
                     ChecklistEvent clEvent = new ChecklistEvent(type, name, description, status, counter);
-                    // AddEvent(clEvent);
+                    AddEvent(clEvent);
                 }
             }
         }

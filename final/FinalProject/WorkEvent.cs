@@ -41,5 +41,4 @@ public class WorkEvent : Event
     {
        _status = true;
     }
-
 }
