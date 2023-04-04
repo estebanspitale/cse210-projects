@@ -49,8 +49,8 @@ public class EventMenu
     3. Work Event
     4. Hobby Event
     5. Other Event
-    3. Checklist Event
-    4. Back to Main Menu
+    6. Checklist Event
+    7. Back to Main Menu
 
     What type of event would you like to create?  ";
 

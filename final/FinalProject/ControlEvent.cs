@@ -5,11 +5,9 @@ public class ControlEvent
 
 {
     private List<Event> _events = new List<Event>();
-    private int _totalPoints;
-
     public ControlEvent()
     {
-        _totalPoints = 0;
+
     }
     public void AddEvent(Event ev)
     {
