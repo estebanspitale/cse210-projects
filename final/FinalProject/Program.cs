@@ -15,7 +15,7 @@ class Program
 
 
         int action = 0;
-        while (action != 3)
+        while (action != 6)
         {
             action = choice.UserChoice();
             switch (action)
@@ -37,7 +37,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 ChurchEvent chEvent = new ChurchEvent("Church Event:", name, description);
                                 events.AddEvent(chEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 2:
                                 Console.WriteLine("What is the name of your event?  ");
@@ -48,7 +48,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 FamilyEvent fEvent = new FamilyEvent("Family Event:", name, description);
                                 events.AddEvent(fEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 3:
                                 Console.WriteLine("What is the name of your event?  ");
@@ -59,7 +59,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 WorkEvent wEvent = new WorkEvent("Work Event:", name, description);
                                 events.AddEvent(wEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 4:
                                 Console.WriteLine("What is the name of your event?  ");
@@ -70,7 +70,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 HobbyEvent hEvent = new HobbyEvent("Hobby Event:", name, description);
                                 events.AddEvent(hEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 5:
                                 Console.WriteLine("What is the name of your event?  ");
@@ -81,7 +81,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 OtherEvent oEvent = new OtherEvent("Other Event:", name, description);
                                 events.AddEvent(oEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 6:
                                 Console.WriteLine("What is the name of your event?  ");
@@ -92,7 +92,7 @@ class Program
                                 description = textInfo.ToTitleCase(description);
                                 ChecklistEvent clEvent = new ChecklistEvent("Check List Event:", name, description);
                                 events.AddEvent(clEvent);
-                                eventInput = 5;
+                                eventInput = 8;
                                 break;
                             case 7:
                                 break;

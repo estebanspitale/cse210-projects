@@ -2,7 +2,7 @@ using System;
 
 public class FamilyEvent : Event
 {
-    private string _type = "Fammily Event:";
+    private string _type = "Family Event:";
     private bool _status;
 
     public FamilyEvent(string type, string name, string description) : base(type, name, description)
@@ -13,10 +13,21 @@ public class FamilyEvent : Event
     {
         _status = status;
     }
+    public Boolean Finished()
+    {
+        return _status;
+    }
 
     public override void ListEvent(int i)
     {
-        Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
+        if (Finished() == false)
+        {
+            Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
+        }
+        else if (Finished() == true)
+        {
+            Console.WriteLine($"{i}. [X] {GetName()} ({GetDescription()})");
+        }
     }
     public override string SaveEvent()
     {
@@ -28,6 +39,7 @@ public class FamilyEvent : Event
     }
     public override void RecordGEvent(List<Event> events)
     {
-        
+       _status = true;
+        Console.WriteLine($"Congratulations! You completed the event!!");
     }
 }

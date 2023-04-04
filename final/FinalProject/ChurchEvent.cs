@@ -40,6 +40,7 @@ public class ChurchEvent : Event
     public override void RecordGEvent(List<Event> events)
     {
        _status = true;
+        Console.WriteLine($"Congratulations! You completed the event!!");
     }
 
 }
