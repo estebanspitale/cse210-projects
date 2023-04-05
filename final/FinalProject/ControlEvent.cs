@@ -65,7 +65,8 @@ public class ControlEvent
 
         if (File.Exists(userFileName))
         {
-            string[] readText = File.ReadAllLines(userFileName);            readText = readText.Skip(1).ToArray();
+            string[] readText = File.ReadAllLines(userFileName);            
+            readText = readText.Skip(1).ToArray();
             foreach (string line in readText)
             {
                 string[] entries = line.Split("; ");
