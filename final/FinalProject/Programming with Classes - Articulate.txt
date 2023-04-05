@@ -1,0 +1,116 @@
+Programming with Classes - Articulate
+
+Articulate the principles of programming with classes.
+
+. Explain the meaning of each principle.
+. Highlight how each principle was used in your final project.
+. Explain how these principles make your final project more flexible for changes.
+(Thoroughly explain these concepts (this likely cannot be done in less than 100 words))
+
+1- Abstraction:
+Abstraction is the process of simplifying ideas that 
+sometimes seem very complex. Programmers always aspire to implement abstraction.
+This abstraction process is the way software is written today. For example, 
+in this course, when analyzing the objects with their states 
+and behaviors within the classes, they allow simplifying what would be more complex. 
+The process becomes somewhat easier to analyze and code.
+For example, in my final project I applied the principle of abstraction by creating 
+simple classes that allow the development of the program in a more orderly and clean way...
+- FamilyEvent.cs 
+- HobbyEvent.cs 
+- OtherEvent.cs 
+- WorkEvent.cs , etc 
+
+
+2- Encapsulation:
+It is interesting that the word itself indicates what encapsulation is. 
+Refers to enclosing something so that other code can't use or see it.
+Within the programming, it indicates that we hide information 
+and access control, for example of a class.
+I think that some points that give importance to encapsulation 
+would be in cases where something is not working well, we can 
+quickly identify where the error is because not all the codes have 
+access and if we need to correct something we can go directly to the codes 
+have access to make the necessary adjustments.
+For example, in my final project I used it in the following class when defining ChecklistEvent:
+
+public class ChecklistEvent : Event
+{
+    private string _type = "Check List Event:";
+    private bool _status;
+    private int _count;
+    ...
+    ...
+}
+
+3- Inheritance:
+Inheritance is a principle that has the ability to, as the word indicates, 
+inherit from another class, attributes and 
+methods without having to rewrite them. It is the same as 
+the concept of inheritance between parents and children.
+I think one of the biggest benefits is that it saves us 
+from writing code by being able to use the one inherited from 
+the parent class. It becomes a means to reuse code
+For example, in my final project I applied the inheritance principle in the following code...
+
+public class ChurchEvent : Event
+{
+    private string _type = "Church Event:";
+    private bool _status;
+
+    public ChurchEvent(string type, string name, string description) : base(type, name, description)
+    {
+        _status = false;
+    }
+    public ChurchEvent(string type, string name, string description, bool status) : base(type, name, description)
+    {
+        _status = status;
+    }
+    public Boolean Finished()
+    {
+        return _status;
+    }
+    ...
+}
+
+4- Polymorphism:
+Polymorphism is another principle of object-oriented programming 
+languages ​​that allows a routine to use variables of different 
+types at different times. It is the ability to present the same 
+interface to several different data types and objects to respond 
+in a unique way to the same message.
+Polymorphism is one of the fundamental principles along 
+with encapsulation and inheritance. Allows redefining 
+methods in derived classes. It is used in the context 
+of late binding, where an object's behavior for responding 
+to a call to its method members is determined based on the 
+object's type at run time.
+For example, in my final project I applied the principle of polymorphism in the 
+following code, continuing with the example from the previous point...
+
+...
+public override void ListEvent(int i)
+    {
+        if (Finished() == false)
+        {
+            Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
+        }
+        else if (Finished() == true)
+        {
+            Console.WriteLine($"{i}. [X] {GetName()} ({GetDescription()})");
+        }
+    }
+    public override string SaveEvent()
+    {
+        return ($"{_type}; {GetName()}; {GetDescription()}; {_status}");
+    }
+    public override string LoadEvent()
+    {
+        return ($"{_type}; {GetName()}; {GetDescription()}; {_status}");
+    }
+    public override void RecordGEvent(List<Event> events)
+    {
+       _status = true;
+        Console.WriteLine($"Congratulations! You completed the event!!");
+    }
+...

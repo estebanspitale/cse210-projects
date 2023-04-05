@@ -46,6 +46,15 @@ public class ControlEvent
         Console.Write("\nWhat is the name for this event file?  ");
         string userInput = Console.ReadLine();
         string userFileName = userInput + ".txt";
+
+        using (StreamWriter outputFile = new StreamWriter(userFileName))
+        {
+            outputFile.WriteLine();
+            foreach (Event ev in _events)
+            {
+                outputFile.WriteLine(ev.SaveEvent());
+            }
+        }
     }
 
     public void LoadEvents()
@@ -95,7 +104,6 @@ public class ControlEvent
                 }
                 if (entries[0] == "Check List Event:")
                 {
-                    int numberTimes = int.Parse(entries[4]);
                     int counter = int.Parse(entries[5]);
                     ChecklistEvent clEvent = new ChecklistEvent(type, name, description, status, counter);
                     AddEvent(clEvent);

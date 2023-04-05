@@ -32,7 +32,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 string name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 string description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 ChurchEvent chEvent = new ChurchEvent("Church Event:", name, description);
@@ -43,7 +43,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 FamilyEvent fEvent = new FamilyEvent("Family Event:", name, description);
@@ -54,7 +54,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 WorkEvent wEvent = new WorkEvent("Work Event:", name, description);
@@ -65,7 +65,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 HobbyEvent hEvent = new HobbyEvent("Hobby Event:", name, description);
@@ -76,7 +76,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 OtherEvent oEvent = new OtherEvent("Other Event:", name, description);
@@ -87,7 +87,7 @@ class Program
                                 Console.WriteLine("What is the name of your event?  ");
                                 name = Console.ReadLine();
                                 name = textInfo.ToTitleCase(name);
-                                Console.WriteLine("What is a short description of your event?  ");
+                                Console.WriteLine("What is a short description (date and time) of your event?  ");
                                 description = Console.ReadLine();
                                 description = textInfo.ToTitleCase(description);
                                 ChecklistEvent clEvent = new ChecklistEvent("Check List Event:", name, description);
